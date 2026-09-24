@@ -1,1 +1,10 @@
-{}
+{
+  "UiPath.DocumentProcessing.Contracts": "2.4.0-preview",
+  "UiPath.DocumentUnderstanding.Activities": "3.5.0-preview",
+  "UiPath.Excel.Activities": "3.6.1",
+  "UiPath.GSuite.Activities": "3.11.10",
+  "UiPath.OCR.Activities": "4.5.0-preview",
+  "UiPath.PDF.Activities": "4.5.0-preview",
+  "UiPath.System.Activities": "26.4.1-preview",
+  "UiPath.UIAutomation.Activities": "26.10.4"
+}
