@@ -1,0 +1,58 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "f127a110-cd79-498a-a7a2-8d7c3eb3ce2f",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "InvoiceFilePath": {
+            "type": "string"
+          },
+          "OrderEntryAppPath": {
+            "type": "string"
+          },
+          "ReportFilePath": {
+            "type": "string"
+          },
+          "UiPathEventConnector": {
+            "type": "string"
+          },
+          "UiPathEvent": {
+            "type": "string"
+          },
+          "UiPathEventObjectType": {
+            "type": "string"
+          },
+          "UiPathEventObjectId": {
+            "type": "string"
+          },
+          "UiPathAdditionalEventData": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "InvoiceNumber": {
+            "type": "string"
+          },
+          "Items": {
+            "type": "string"
+          },
+          "Timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Status": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}
