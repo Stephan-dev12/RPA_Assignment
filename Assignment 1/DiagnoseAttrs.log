@@ -1,0 +1,12 @@
+NODE=ReadPDFText
+ATTR Name=PreserveFormatting Local=PreserveFormatting Prefix= NS= Value={x:Null}
+ATTR Name=ResourceFile Local=ResourceFile Prefix= NS= Value={x:Null}
+ATTR Name=DisplayName Local=DisplayName Prefix= NS= Value=Read Invoice PDF
+ATTR Name=FileName Local=FileName Prefix= NS= Value=[g_PdfPath]
+ATTR Name=sap:VirtualizedContainerService.HintSize Local=VirtualizedContainerService.HintSize Prefix=sap NS=http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation Value=592,123.2
+ATTR Name=sap2010:WorkflowViewState.IdRef Local=WorkflowViewState.IdRef Prefix=sap2010 NS=http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation Value=ReadPDFText_1
+ATTR Name=Range Local=Range Prefix= NS= Value=All
+ATTR Name=Text Local=Text Prefix= NS= Value=[g_PdfText]
+NODE=Assign
+ATTR Name=sap:VirtualizedContainerService.HintSize Local=VirtualizedContainerService.HintSize Prefix=sap NS=http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation Value=592,174.4
+ATTR Name=sap2010:WorkflowViewState.IdRef Local=WorkflowViewState.IdRef Prefix=sap2010 NS=http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation Value=Assign_1

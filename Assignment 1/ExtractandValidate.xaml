@@ -1,11 +1,26 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="g_PdfPath" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
+    <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectId" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathAdditionalEventData" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Main.UiPathEventConnector>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventConnector>
+  <this:Main.UiPathEvent>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEvent>
+  <this:Main.UiPathEventObjectType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectType>
+  <this:Main.UiPathEventObjectId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectId>
+  <this:Main.UiPathAdditionalEventData>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathAdditionalEventData>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -53,6 +68,85 @@
       <x:String>UiPath.Excel.Model</x:String>
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.Workflow.Runtime</x:String>
+      <x:String>System.Activities.Tracking</x:String>
+      <x:String>System.Activities.Statements.Tracking</x:String>
+      <x:String>System.Activities.Runtime</x:String>
+      <x:String>System.Activities.Runtime.DurableInstancing</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.ParallelTracking</x:String>
+      <x:String>System.Activities.Hosting</x:String>
+      <x:String>System.Activities.Persistence</x:String>
+      <x:String>System.Activities.DurableInstancing</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>Microsoft.CodeAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.FlowAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.Text</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics.Telemetry</x:String>
+      <x:String>Microsoft.CodeAnalysis.Operations</x:String>
+      <x:String>Microsoft.CodeAnalysis.Emit</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic.Syntax</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>System.Security.Authentication</x:String>
+      <x:String>System.Net.Cache</x:String>
+      <x:String>System.Net.NetworkInformation</x:String>
+      <x:String>System.Net.Security</x:String>
+      <x:String>System.Net.Sockets</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -119,430 +213,83 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>NPOI.Core</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Threading.AccessControl</AssemblyReference>
+      <AssemblyReference>System.Threading</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Parallel</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>System.Net.Security</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis</AssemblyReference>
+      <AssemblyReference>System.Net.NetworkInformation</AssemblyReference>
+      <AssemblyReference>System.Net.Ping</AssemblyReference>
+      <AssemblyReference>System.Net.Sockets</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="657.2,8160.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <sap:WorkflowViewStateService.ViewState>
-      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-      </scg:Dictionary>
-    </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="ExtractAndValidate" sap:VirtualizedContainerService.HintSize="625.6,8137.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="sd:DataTable" Name="dtReport" />
-        <Variable x:TypeArguments="x:String" Default="C:\Users\Stephan\OneDrive\Desktop\UOM\Course\Y3\RPA\Assignment 1\reports.xlsx" Name="g_ReportPath" />
-        <Variable x:TypeArguments="x:Boolean" Name="g_IsDuplicate" />
-        <Variable x:TypeArguments="x:String" Name="g_ValidationMessage" />
-        <Variable x:TypeArguments="x:Boolean" Default="True" Name="g_IsValid" />
-        <Variable x:TypeArguments="str:MatchCollection" Name="g_ItemMatches" />
-        <Variable x:TypeArguments="sd:DataTable" Name="g_Items" />
-        <Variable x:TypeArguments="x:Double" Name="g_GrandTotal" />
-        <Variable x:TypeArguments="x:Double" Name="g_VAT" />
-        <Variable x:TypeArguments="x:Double" Name="g_SubTotal" />
-        <Variable x:TypeArguments="x:String" Name="g_CustomerAddress" />
-        <Variable x:TypeArguments="x:String" Name="g_CustomerName" />
-        <Variable x:TypeArguments="x:String" Name="g_PaymentTerms" />
-        <Variable x:TypeArguments="x:String" Name="g_PONumber" />
-        <Variable x:TypeArguments="x:String" Name="g_InvoiceDate" />
-        <Variable x:TypeArguments="x:String" Name="g_InvoiceNumber" />
-        <Variable x:TypeArguments="x:String" Name="g_PdfText" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadPDFText PreserveFormatting="{x:Null}" ResourceFile="{x:Null}" DisplayName="Read Invoice PDF" FileName="[g_PdfPath]" sap:VirtualizedContainerService.HintSize="592,123.2" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[g_PdfText]">
-        <ui:ReadPDFText.Item>
-          <upap:ItemArgument x:TypeArguments="upr:IResource" ResourceFile="{x:Null}" FileName="[g_PdfPath]" />
-        </ui:ReadPDFText.Item>
-      </ui:ReadPDFText>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[g_InvoiceNumber]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(g_PdfText, "Invoice Number:\s*(.+)").Groups(1).Value.Trim]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_2">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[g_InvoiceDate]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(g_PdfText, "Invoice Date:\s*(.+)").Groups(1).Value.Trim]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[g_PONumber]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(g_PdfText, "Purchase Order Number:\s*(.+)").Groups(1).Value.Trim]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_4">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[g_PaymentTerms]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(g_PdfText, "Payment Terms:\s*(.+)").Groups(1).Value.Trim]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[g_CustomerName]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(g_PdfText, "Customer Name:\s*(.+)").Groups(1).Value.Trim]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_6">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[g_CustomerAddress]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(g_PdfText, "Customer Address:\s*(.+)").Groups(1).Value.Trim]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_7">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Double">[g_SubTotal]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Double">[Double.Parse(System.Text.RegularExpressions.Regex.Match(g_PdfText, "Subtotal \(MUR\):\s*([\d,]+\.\d{2})").Groups(1).Value.Replace(",", ""), System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_8">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Double">[g_VAT]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Double">[Double.Parse(System.Text.RegularExpressions.Regex.Match(g_PdfText, "VAT \(15%\) \(MUR\):\s*([\d,]+\.\d{2})").Groups(1).Value.Replace(",", ""), System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_9">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Double">[g_GrandTotal]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Double">[Double.Parse(System.Text.RegularExpressions.Regex.Match(g_PdfText, "Grand Total \(MUR\):\s*([\d,]+\.\d{2})").Groups(1).Value.Replace(",", ""), System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:BuildDataTable DataTable="[g_Items]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="592,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ItemCode&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Quantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xA;                &lt;xs:element name=&quot;UnitPrice&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_10">
-        <Assign.To>
-          <OutArgument x:TypeArguments="str:MatchCollection">[g_ItemMatches]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="str:MatchCollection" xml:space="preserve">[System.Text.RegularExpressions.Regex.Matches(
-    g_PdfText,
-    "(?m)^(\w+)\s+(.+?)\s+(\d+)\s+([\d,]+\.\d{2})\s+([\d,]+\.\d{2})\s*$"
-)]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each itemMatch" sap:VirtualizedContainerService.HintSize="592,401.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[g_ItemMatches]">
-        <ui:ForEach.Body>
-          <ActivityAction x:TypeArguments="str:Match">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="str:Match" Name="itemMatch" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,271.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {&#xA;    itemMatch.Groups(1).Value.Trim,&#xA;    itemMatch.Groups(2).Value.Trim,&#xA;    CInt(itemMatch.Groups(3).Value),&#xA;    Double.Parse(itemMatch.Groups(4).Value.Replace(&quot;,&quot;, &quot;&quot;), System.Globalization.CultureInfo.InvariantCulture),&#xA;    Double.Parse(itemMatch.Groups(5).Value.Replace(&quot;,&quot;, &quot;&quot;), System.Globalization.CultureInfo.InvariantCulture)&#xA;}]" DataTable="[g_Items]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,211.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-            </Sequence>
-          </ActivityAction>
-        </ui:ForEach.Body>
-      </ui:ForEach>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Number of items extracted: &quot; + g_Items.Rows.Count.ToString]" />
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[g_Items]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="592,355.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-        <ui:ForEachRow.Body>
-          <ActivityAction x:TypeArguments="sd:DataRow">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,173.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[CurrentRow(&quot;ItemCode&quot;).ToString + &quot; | &quot; +&#xA;CurrentRow(&quot;Description&quot;).ToString + &quot; | Qty: &quot; +&#xA;CurrentRow(&quot;Quantity&quot;).ToString + &quot; | Price: MUR &quot; +&#xA;CurrentRow(&quot;UnitPrice&quot;).ToString + &quot; | Total: MUR &quot; +&#xA;CurrentRow(&quot;Total&quot;).ToString]" />
-            </Sequence>
-          </ActivityAction>
-        </ui:ForEachRow.Body>
-      </ui:ForEachRow>
-      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="592,122.4" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Invoice: &quot; + g_InvoiceNumber + Environment.NewLine +&#xA;&quot;Date: &quot; + g_InvoiceDate + Environment.NewLine +&#xA;&quot;PO: &quot; + g_PONumber + Environment.NewLine +&#xA;&quot;Customer: &quot; + g_CustomerName + Environment.NewLine +&#xA;&quot;Address: &quot; + g_CustomerAddress + Environment.NewLine +&#xA;&quot;Payment Terms: &quot; + g_PaymentTerms + Environment.NewLine +&#xA;&quot;Subtotal: MUR &quot; + g_Subtotal.ToString + Environment.NewLine +&#xA;&quot;VAT: MUR &quot; + g_VAT.ToString + Environment.NewLine +&#xA;&quot;Grand Total: MUR &quot; + g_GrandTotal.ToString]" />
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_12">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Boolean">[g_IsValid]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="Assign_13">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[g_ValidationMessage]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[""]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <If Condition="[String.IsNullOrWhiteSpace(g_InvoiceNumber)]" sap:VirtualizedContainerService.HintSize="592,628" sap2010:WorkflowViewState.IdRef="If_1">
-        <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,400" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_14">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">[g_IsValid]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_15">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[g_ValidationMessage]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[g_ValidationMessage + "Invoice number is missing. "]</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </If.Else>
-      </If>
-      <If Condition="[String.IsNullOrWhiteSpace(g_CustomerName)]" sap:VirtualizedContainerService.HintSize="592,628" sap2010:WorkflowViewState.IdRef="If_2">
-        <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,400" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_16">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">[g_IsValid]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_17">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[g_ValidationMessage]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[g_ValidationMessage + "Customer name is missing. "]</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </If.Else>
-      </If>
-      <If Condition="[g_Items Is Nothing OrElse g_Items.Rows.Count = 0]" sap:VirtualizedContainerService.HintSize="592,628" sap2010:WorkflowViewState.IdRef="If_3">
-        <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,400" sap2010:WorkflowViewState.IdRef="Sequence_10">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_18">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">[g_IsValid]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_19">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[g_ValidationMessage]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[g_ValidationMessage + "Invoice contains no items. "]</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </If.Else>
-      </If>
-      <If Condition="[g_IsValid]" sap:VirtualizedContainerService.HintSize="592,2808.8" sap2010:WorkflowViewState.IdRef="If_5">
-        <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="590.4,2505.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[System.IO.File.Exists(g_ReportPath)]" sap:VirtualizedContainerService.HintSize="556.8,1968.8" sap2010:WorkflowViewState.IdRef="If_6">
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="555.2,1482.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="521.6,1422.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[g_ReportPath]">
-                    <ueab:ExcelApplicationCard.Body>
-                      <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,1203.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="486.4,168.8" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" SaveTo="[dtReport]" />
-                          <Assign sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_25">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[g_IsDuplicate]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtReport]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486.4,800" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
-                            <ui:ForEachRow.Body>
-                              <ActivityAction x:TypeArguments="sd:DataRow">
-                                <ActivityAction.Argument>
-                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                                </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,627.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[CurrentRow(&quot;Invoice Number&quot;).ToString.Trim = g_InvoiceNumber.Trim]" sap:VirtualizedContainerService.HintSize="451.2,567.2" sap2010:WorkflowViewState.IdRef="If_7">
-                                    <If.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,348" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_26">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Boolean">[g_IsDuplicate]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Duplicate: &quot; + g_IsDuplicate.ToString]" />
-                                      </Sequence>
-                                    </If.Then>
-                                    <If.Else>
-                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </Sequence>
-                                    </If.Else>
-                                  </If>
-                                </Sequence>
-                              </ActivityAction>
-                            </ui:ForEachRow.Body>
-                          </ui:ForEachRow>
-                        </Sequence>
-                      </ActivityAction>
-                    </ueab:ExcelApplicationCard.Body>
-                  </ueab:ExcelApplicationCard>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="555.2,348" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="521.6,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Report does not exist - invoice cannot be a duplicate." />
-                  <Assign sap:VirtualizedContainerService.HintSize="521.6,165.6" sap2010:WorkflowViewState.IdRef="Assign_24">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[g_IsDuplicate]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                </Sequence>
-              </If.Else>
-            </If>
-            <If Condition="[g_IsDuplicate]" sap:VirtualizedContainerService.HintSize="556.8,476.8" sap2010:WorkflowViewState.IdRef="If_8">
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,173.6" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;DUPLICATE INVOICE: &quot; + g_InvoiceNumber + &quot; has already been processed.&quot;]" />
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,173.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[&quot;Invoice &quot; + g_InvoiceNumber + &quot; is valid and ready for Order Entry.&quot;]" />
-                </Sequence>
-              </If.Else>
-            </If>
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="590.4,173.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="556.8,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Validation failed: &quot; + g_ValidationMessage]" />
-          </Sequence>
-        </If.Else>
-      </If>
-    </Sequence>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_315">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtReport" />
+      <Variable x:TypeArguments="x:String" Name="g_ReportPath" />
+      <Variable x:TypeArguments="x:Boolean" Name="g_IsDuplicate" />
+      <Variable x:TypeArguments="x:String" Name="g_ValidationMessage" />
+      <Variable x:TypeArguments="x:Boolean" Name="g_IsValid" />
+      <Variable x:TypeArguments="sd:DataTable" Name="g_Items" />
+      <Variable x:TypeArguments="x:Double" Name="g_GrandTotal" />
+      <Variable x:TypeArguments="x:Double" Name="g_VAT" />
+      <Variable x:TypeArguments="x:Double" Name="g_SubTotal" />
+      <Variable x:TypeArguments="x:String" Name="g_CustomerAddress" />
+      <Variable x:TypeArguments="x:String" Name="g_CustomerName" />
+      <Variable x:TypeArguments="x:String" Name="g_PaymentTerms" />
+      <Variable x:TypeArguments="x:String" Name="g_PONumber" />
+      <Variable x:TypeArguments="x:String" Name="g_InvoiceDate" />
+      <Variable x:TypeArguments="x:String" Name="g_InvoiceNumber" />
+      <Variable x:TypeArguments="x:String" Name="g_PdfText" />
+      <Variable x:TypeArguments="x:String" Name="UiPathEventConnector" />
+      <Variable x:TypeArguments="x:String" Name="UiPathEvent" />
+      <Variable x:TypeArguments="x:String" Name="UiPathEventObjectType" />
+      <Variable x:TypeArguments="x:String" Name="UiPathEventObjectId" />
+      <Variable x:TypeArguments="x:String" Name="UiPathAdditionalEventData" />
+      <Variable x:TypeArguments="x:String" Name="g_PdfPath" />
+    </Sequence.Variables>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_7" />
   </Sequence>
 </Activity>

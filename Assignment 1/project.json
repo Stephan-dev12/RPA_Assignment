@@ -53,6 +53,12 @@
       "uniqueId": "f127a110-cd79-498a-a7a2-8d7c3eb3ce2f",
       "input": [],
       "output": []
+    },
+    {
+      "filePath": "ExtractandValidate.xaml",
+      "uniqueId": "ae1ad3bf-7e7d-4323-bc2c-1a6173b26643",
+      "input": [],
+      "output": []
     }
   ],
   "isTemplate": false,
